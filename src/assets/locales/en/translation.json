@@ -1,0 +1,60 @@
+{
+    "days": {
+        "monday": "Monday",
+        "tuesday": "Tuesday",
+        "wednesday": "Wednesday",
+        "thursday": "Thursday",
+        "friday": "Friday",
+        "saturday": "Saturday",
+        "sunday": "Sunday"
+    },
+    "lang": {
+        "placeholder": "Language",
+        "en": "English",
+        "fr": "French",
+        "es": "Spanish",
+        "de": "German"
+    },
+    "theme": {
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
+    },
+    "main": {
+        "actions": {
+            "save": {
+                "btn-text": "Save",
+                "alert": {
+                    "success": "Data saved successfully",
+                    "error": "Error saving data"
+                }
+            },
+            "clear": {
+                "btn-text": "Clear data",
+                "confirm": {
+                    "title": "Clear data",
+                    "text": "Are you sure you want to clear the data?",
+                    "btn-cancel": "Cancel",
+                    "btn-confirm": "Clear"
+                },
+                "alert": {
+                    "success": "Data cleared successfully",
+                    "error": "Error clearing data"
+                }
+            },
+            "load": {
+                "alert": {
+                    "error": "Error loading data"
+                }
+            }
+        },
+        "total": "Total",
+        "remote": "Telework",
+        "break": {
+            "first": "Coffeeeeeeee",
+            "middle": "See you tomorrow yeeeaaaaah",
+            "last": "TitsBélier",
+            "end": "WeekEnd !!"
+        }
+    }
+}

@@ -1,0 +1,60 @@
+{
+    "days": {
+        "monday": "Lunes",
+        "tuesday": "Martes",
+        "wednesday": "Miércoles",
+        "thursday": "Jueves",
+        "friday": "Viernes",
+        "saturday": "Sábado",
+        "sunday": "Domingo"
+    },
+    "lang": {
+        "placeholder": "Lengua",
+        "en": "Inglés",
+        "es": "Español",
+        "fr": "Francés",
+        "de": "Alemán"
+    },
+    "theme": {
+        "light": "Ligero",
+        "dark": "Oscuro",
+        "system": "Sistema"
+    },
+    "main": {
+        "actions": {
+            "save": {
+                "btn-text": "Guardar",
+                "alert": {
+                    "success": "Datos guardados con éxito",
+                    "error": "Error al guardar los datos"
+                }
+            },
+            "clear": {
+                "btn-text": "Borrar datos",
+                "confirm": {
+                    "title": "Borrar datos",
+                    "text": "¿Estás seguro de que quieres borrar los datos?",
+                    "btn-cancel": "Cancelar",
+                    "btn-confirm": "Borrar"
+                },
+                "alert": {
+                    "success": "Datos borrados con éxito",
+                    "error": "Error al borrar los datos"
+                }
+            },
+            "load": {
+                "alert": {
+                    "error": "Error al cargar los datos"
+                }
+            }
+        },
+        "total": "Total",
+        "remote": "Teletrabajo",
+        "break": {
+            "first": "Caféééé",
+            "middle": "Nos vemos mañana siiiiii",
+            "last": "TitsBélier",
+            "end": "Fin de semana !!"
+        }
+    }
+}

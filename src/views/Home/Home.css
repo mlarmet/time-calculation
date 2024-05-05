@@ -1,0 +1,48 @@
+:root {
+    --border-spacing: 2em;
+}
+
+.home {
+    padding: 1em;
+    flex: 1;
+}
+
+.home header {
+    width: 100%;
+}
+
+.home h2 {
+    margin: 0;
+}
+
+.home,
+.home main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home main {
+    flex: 1;
+    justify-content: center;
+
+    max-width: min-content;
+}
+
+.home #day-top {
+    display: flex;
+    justify-content: space-between;
+
+    width: 100%;
+
+    padding: 0 var(--border-spacing);
+}
+
+.home table#day-container {
+    margin-top: 1em;
+    border-spacing: var(--border-spacing);
+}
+
+.home .close-icon {
+    fill: var(--main-font-color) !important;
+}

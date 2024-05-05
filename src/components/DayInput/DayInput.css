@@ -1,0 +1,13 @@
+.day-input {
+	margin: 1em 0;
+}
+
+.day-input .time-picker input {
+	padding: 12px 0 12px 8px;
+	max-width: 100px;
+	min-width: 56px;
+}
+
+.day-input .time-picker div:hover > fieldset {
+	border-color: var(--day-border-color);
+}

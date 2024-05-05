@@ -1,0 +1,66 @@
+:root {
+	--day-border-color: #50a2ff7b;
+
+	--icon-width: 16px;
+}
+
+.day h3,
+.day p {
+	margin: 0;
+}
+
+.day .day-input-container {
+	display: grid;
+	grid-template-columns: 1fr var(--icon-width) 1fr var(--icon-width) 1fr var(--icon-width) 1fr;
+	grid-template-rows: 1fr;
+	align-items: center;
+
+	gap: 2em;
+
+	/* margin-top: 0.25em; */
+	padding: 0.5em 1em 0.25em 1em;
+
+	border-radius: 10px;
+
+	background-color: var(--day-bg-color);
+	box-shadow: 0 0 0 1px var(--day-border-color), 3px 3px 0 4px var(--day-border-color);
+
+	transition: transform 125ms ease-in-out;
+}
+
+.day-input-container > span {
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+	line-height: 0.5;
+	font-size: 2em;
+	width: var(--icon-width);
+}
+
+.day.selected .day-input-container,
+.day .day-input-container:hover {
+	background-color: var(--day-select-bg-color);
+	--day-border-color: #aa50ff7b;
+
+	transform: scale(1.1, 1.1) rotate(-2deg);
+
+	z-index: 2;
+}
+
+.day .day-input-container.is-remote:not(:hover) {
+	background-color: var(--day-remote-bg-color);
+	--day-border-color: #50ff8a7b;
+}
+
+.day .day-input-total {
+	margin-left: 2em;
+}
+
+.day .day-input-total h3,
+.day .day-input-total p {
+	margin: 0;
+}
+
+.day .day-input-total h3 {
+	min-width: max-content;
+}

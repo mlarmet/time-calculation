@@ -1,0 +1,60 @@
+{
+    "days": {
+        "monday": "Montag",
+        "tuesday": "Dienstag",
+        "wednesday": "Mittwoch",
+        "thursday": "Donnerstag",
+        "friday": "Freitag",
+        "saturday": "Samstag",
+        "sunday": "Sonntag"
+    },
+    "lang": {
+        "placeholder": "Sprache",
+        "de": "Deutsch",
+        "en": "Englisch",
+        "fr": "Französisch",
+        "es": "Spanisch"
+    },
+    "theme": {
+        "light": "Klar",
+        "dark": "Dunkel",
+        "system": "System"
+    },
+    "main": {
+        "actions": {
+            "save": {
+                "btn-text": "Daten speichern",
+                "alert": {
+                    "success": "Daten erfolgreich gespeichert",
+                    "error": "Fehler beim Speichern der Daten"
+                }
+            },
+            "clear": {
+                "btn-text": "Löschen von Daten",
+                "confirm": {
+                    "title": "Löschen von Daten",
+                    "text": "Sind Sie sicher, dass Sie die Daten löschen möchten?",
+                    "btn-cancel": "Stornieren",
+                    "btn-confirm": "Löschen"
+                },
+                "alert": {
+                    "success": "Daten erfolgreich gelöscht",
+                    "error": "Fehler beim Löschen der Daten"
+                }
+            },
+            "load": {
+                "alert": {
+                    "error": "Fehler beim Laden der Daten"
+                }
+            }
+        },
+        "total": "Gesamt",
+        "remote": "Telearbeit",
+        "break": {
+            "first": "Kaffeeeeeeee",
+            "middle": "Bis morgen, jaaaaa",
+            "last": "TitsBélier",
+            "end": "Wochenende !!"
+        }
+    }
+}

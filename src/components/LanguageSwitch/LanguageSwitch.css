@@ -1,0 +1,5 @@
+.language-switch .MuiToggleButtonGroup-root .MuiButton-root {
+	padding-inline: 9.25px;
+	--Button-paddingBlock: 4px;
+	--Button-minHeight: 1rem;
+}
