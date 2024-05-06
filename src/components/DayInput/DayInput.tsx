@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
+import moment from "moment";
+
 import { TimePicker } from "@mui/x-date-pickers";
 import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { renderTimeViewClock } from "@mui/x-date-pickers/timeViewRenderers";
 
-import moment from "moment";
-
 import { defaultTimeSettings, remoteTimeSettings } from "components/Day/Day.data";
 import { getDay } from "components/Day/Day.slice";
 
 import "./DayInput.css";
+
 import { DayInputProps } from "./DayInput.types";
 
 const DayInput: React.FC<DayInputProps> = ({ section, dayName, onChange, onInput }) => {

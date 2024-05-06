@@ -9,8 +9,9 @@ import { Button, ColorPaletteProp, DialogActions, DialogContent, DialogTitle, Di
 import { IoMdClose as CloseIcon } from "react-icons/io";
 import { IoAlertCircleOutline as ErrorIcon, IoCheckmarkCircleOutline as SuccessIcon } from "react-icons/io5";
 
-import { DisplayAlert } from "./Action.type";
 import "./Actions.css";
+
+import { DisplayAlert } from "./Action.type";
 
 export default function Actions() {
 	const [displayAlert, setDisplayAlert] = useState<DisplayAlert>({ color: "neutral", content: "", open: false });

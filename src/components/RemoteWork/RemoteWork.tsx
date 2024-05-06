@@ -2,11 +2,12 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 
-import { getDay, setRemoteWork } from "components/Day/Day.slice";
-
 import { Checkbox } from "@mui/joy";
 
+import { getDay, setRemoteWork } from "components/Day/Day.slice";
+
 import "./RemoteWork.css";
+
 import { RemoteWorkProps } from "./RemoteWork.types";
 
 const RemoteWork: React.FC<RemoteWorkProps> = ({ dayName }) => {

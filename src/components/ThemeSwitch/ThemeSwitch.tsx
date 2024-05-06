@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
-
-import { useColorScheme as useJoyColorScheme } from "@mui/joy/styles";
-import { useColorScheme as useMaterialColorScheme } from "@mui/material/styles";
+import { useTranslation } from "react-i18next";
 
 import { Button, ToggleButtonGroup } from "@mui/joy";
-
+import { useColorScheme as useJoyColorScheme } from "@mui/joy/styles";
+import { useColorScheme as useMaterialColorScheme } from "@mui/material/styles";
 import { Mode } from "@mui/system/cssVars/useCurrentColorScheme";
 
-import { useTranslation } from "react-i18next";
 import "./ThemeSwitch.css";
 
 const ThemeSwitch = () => {

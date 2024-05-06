@@ -5,11 +5,11 @@ import { useDispatch, useSelector } from "react-redux";
 import DayInput from "components/DayInput/DayInput";
 import RemoteWork from "components/RemoteWork/RemoteWork";
 
+import "./Day.css";
+
 import { remoteTime } from "./Day.data";
 import { getDay, setDayInput } from "./Day.slice";
 import { DayProps, TimeSection } from "./Day.types";
-
-import "./Day.css";
 
 const Day: React.FC<DayProps> = ({ dayName, isFullDay }) => {
 	const [selected, setSelected] = useState<boolean>(false);
