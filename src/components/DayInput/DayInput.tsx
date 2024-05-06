@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
 import moment from "moment";
@@ -20,6 +21,8 @@ const DayInput: React.FC<DayInputProps> = ({ section, dayName, onChange, onInput
 
 	const [minTime, setMinTime] = useState<string>("00:00");
 	const [maxTime, setMaxTime] = useState<string>("23:59");
+
+	const { t } = useTranslation();
 
 	const dayData = useSelector(getDay(dayName));
 
@@ -56,7 +59,7 @@ const DayInput: React.FC<DayInputProps> = ({ section, dayName, onChange, onInput
 		<div className={"day-input " + section}>
 			<LocalizationProvider dateAdapter={AdapterMoment}>
 				<TimePicker
-					label={section}
+					label={t(`main.time.${section}`)}
 					className="time-picker"
 					ampm={false}
 					format="HH:mm"

@@ -1,60 +1,67 @@
 {
-    "days": {
-        "monday": "Lundi",
-        "tuesday": "Mardi",
-        "wednesday": "Mercredi",
-        "thursday": "Jeudi",
-        "friday": "Vendredi",
-        "saturday": "Samedi",
-        "sunday": "Dimanche"
-    },
-    "lang": {
-        "placeholder": "Langue",
-        "en": "Anglais",
-        "fr": "Français",
-        "es": "Espagnol",
-        "de": "Allemand"
-    },
-    "theme": {
-        "light": "Clair",
-        "dark": "Sombre",
-        "system": "Système"
-    },
-    "main": {
-        "actions": {
-            "save": {
-                "btn-text": "Enregistrer",
-                "alert": {
-                    "success": "Données enregistrées avec succès",
-                    "error": "Erreur lors de l'enregistrement des données"
-                }
-            },
-            "clear": {
-                "btn-text": "Effacer les données",
-                "confirm": {
-                    "title": "Effacer les données",
-                    "text": "Êtes-vous sûr de vouloir effacer les données ?",
-                    "btn-cancel": "Annuler",
-                    "btn-confirm": "Effacer"
-                },
-                "alert": {
-                    "success": "Données effacées avec succès",
-                    "error": "Erreur lors de l'effacement des données"
-                }
-            },
-            "load": {
-                "alert": {
-                    "error": "Erreur lors du chargement des données"
-                }
-            }
-        },
-        "total": "Total",
-        "remote": "Télétravail",
-        "break": {
-            "first": "Caféééé",
-            "middle": "A demain ouaiiissss",
-            "last": "TitsBélier",
-            "end": "WeekEnd !!"
-        }
-    }
+	"days": {
+		"monday": "Lundi",
+		"tuesday": "Mardi",
+		"wednesday": "Mercredi",
+		"thursday": "Jeudi",
+		"friday": "Vendredi",
+		"saturday": "Samedi",
+		"sunday": "Dimanche"
+	},
+	"lang": {
+		"placeholder": "Langue",
+		"en": "Anglais",
+		"fr": "Français",
+		"es": "Espagnol",
+		"de": "Allemand"
+	},
+	"theme": {
+		"light": "Clair",
+		"dark": "Sombre",
+		"system": "Système"
+	},
+	"main": {
+		"actions": {
+			"save": {
+				"btn-text": "Enregistrer",
+				"alert": {
+					"success": "Données enregistrées avec succès",
+					"error": "Erreur lors de l'enregistrement des données"
+				}
+			},
+			"clear": {
+				"btn-text": "Effacer les données",
+				"confirm": {
+					"title": "Effacer les données",
+					"text": "Êtes-vous sûr de vouloir effacer les données ?",
+					"btn-cancel": "Annuler",
+					"btn-confirm": "Effacer"
+				},
+				"alert": {
+					"success": "Données effacées avec succès",
+					"error": "Erreur lors de l'effacement des données"
+				}
+			},
+			"load": {
+				"alert": {
+					"error": "Erreur lors du chargement des données"
+				}
+			}
+		},
+		"total": "Total",
+		"remote": "Télétravail",
+		"load": "Chargement...",
+		"time": {
+			"start_AM": "Matin",
+			"end_AM": "Midi",
+			"start_PM": "Après-Midi",
+			"end_PM": "Soir"
+		},
+		"break": {
+			"first": "Caféééé",
+			"middle": "A demain ouaiiissss",
+			"last": "TitsBélier",
+			"end": "WeekEnd !!"
+		}
+	}
 }
