@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { IconContext } from "react-icons";
+import { useSelector } from "react-redux";
 
 import { validLocalStorage } from "components/Day/Day.data";
+import { getAllDays } from "components/Day/Day.slice";
 
 import { Button, ColorPaletteProp, DialogActions, DialogContent, DialogTitle, Divider, Modal, ModalClose, ModalDialog, Snackbar } from "@mui/joy";
 
@@ -20,8 +22,11 @@ export default function Actions() {
 
 	const { t } = useTranslation();
 
+	const dayData = useSelector(getAllDays);
+
 	const handleSaveAction = () => {
 		try {
+			localStorage.setItem("items", JSON.stringify(dayData));
 			showSuccessAlert(t("main.actions.save.alert.success"));
 		} catch (error) {
 			console.error("Error while saving items to local storage", error);
