@@ -11,6 +11,8 @@ import { remoteTime } from "./Day.data";
 import { getDay, setDayInput } from "./Day.slice";
 import { DayProps, TimeSection } from "./Day.types";
 
+const PATH = import.meta.env.BASE_URL;
+
 const Day: React.FC<DayProps> = ({ dayName, isFullDay }) => {
 	const [selected, setSelected] = useState<boolean>(false);
 
@@ -89,10 +91,15 @@ const Day: React.FC<DayProps> = ({ dayName, isFullDay }) => {
 		dispatch(setDayInput({ dayName, dayData: dayValue }));
 	};
 
+	const play = (audioName: string) => {
+		const audio = new Audio(PATH + "/audios/" + audioName + ".mp3");
+		audio.play();
+	};
+
 	return (
 		<>
 			{dayData ? (
-				<tr className={`day ${dayData.dayName}` + (selected ? "  selected" : "")}>
+				<tr id={dayData.dayName} className={"day" + (selected ? "  selected" : "")}>
 					<td className="day-name-container">
 						<h3 className="day-name">{t("days." + dayData.dayName)}</h3>
 						<RemoteWork dayName={dayData.dayName} />
@@ -105,27 +112,33 @@ const Day: React.FC<DayProps> = ({ dayName, isFullDay }) => {
 
 					<td className={"day-input-container" + (dayData && dayData.isRemote ? " is-remote" : "")}>
 						<DayInput section="start_AM" dayName={dayData.dayName} onChange={handleTimeChange} onInput={handleTimeInput} />
-						<span title={t("main.break.first")}>☕</span>
+						<span className="sound" onClick={() => play("coffee")} title={t("main.break.first")}>
+							☕
+						</span>
 						<DayInput section="end_AM" dayName={dayData.dayName} onChange={handleTimeChange} onInput={handleTimeInput} />
-						{
-							/* Afternoon input */
-							isFullDay ? (
-								<>
-									<span title={t("main.break.middle")}>🍽️</span>
-									<DayInput section="start_PM" dayName={dayData.dayName} onChange={handleTimeChange} onInput={handleTimeInput} />
-									<span title={t("main.break.last")}>🐏</span>
-									{/* TODO : if hover 5s : play soundx */}
-									<DayInput section="end_PM" dayName={dayData.dayName} onChange={handleTimeChange} onInput={handleTimeInput} />
-								</>
-							) : (
-								<span title={t("main.break.end")}>🔚</span>
-							)
-						}
+
+						{!isFullDay && !dayData.isRemote ? (
+							<span className="sound" onClick={() => play("finish")} title={t("main.break.end")}>
+								🔚
+							</span>
+						) : (
+							<>
+								{/* Afternoon input  */}
+								<span className="sound" onClick={() => play("laugh")} title={t("main.break.middle")}>
+									🍽️
+								</span>
+								<DayInput section="start_PM" dayName={dayData.dayName} onChange={handleTimeChange} onInput={handleTimeInput} />
+								<span className="sound" onClick={() => play("belier")} title={t("main.break.last")}>
+									🐏
+								</span>
+								<DayInput section="end_PM" dayName={dayData.dayName} onChange={handleTimeChange} onInput={handleTimeInput} />
+							</>
+						)}
 					</td>
 				</tr>
 			) : (
 				<tr>
-					<td>Loading...</td>
+					<td>{t("main.load")}</td>
 				</tr>
 			)}
 		</>
