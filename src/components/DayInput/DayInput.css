@@ -8,6 +8,13 @@
 	min-width: 56px;
 }
 
-.day-input .time-picker div:hover > fieldset {
+.day-input .time-picker div:hover>fieldset {
 	border-color: var(--day-border-color);
+}
+
+
+@media screen and (max-width: 900px) {
+	.day-input {
+		margin: 0;
+	}
 }

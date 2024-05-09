@@ -1,3 +1,6 @@
-#actions button:last-child {
-    margin-left: 1em;
+#actions {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1em;
 }

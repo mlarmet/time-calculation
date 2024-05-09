@@ -1,3 +1,8 @@
+.remote-work {
+	display: flex;
+	align-items: center;
+}
+
 .remote-work .MuiCheckbox-checkbox {
 	margin-top: 4px;
 }

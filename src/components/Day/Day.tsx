@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -15,8 +15,9 @@ const PATH = import.meta.env.BASE_URL;
 
 const Day: React.FC<DayProps> = ({ dayName, isFullDay }) => {
 	const [selected, setSelected] = useState<boolean>(false);
+	const [marginRight, setMarginRight] = useState<number>(-1);
 
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
 
 	const dispatch = useDispatch();
 
@@ -96,21 +97,57 @@ const Day: React.FC<DayProps> = ({ dayName, isFullDay }) => {
 		audio.play();
 	};
 
+	const calculMarginRight = () => {
+		const currentTitle = document.querySelector("#" + dayName + " .day-name-container") as HTMLElement;
+		if (!currentTitle) {
+			return 0;
+		}
+
+		const currentTitleWidth = currentTitle.offsetWidth;
+
+		const titles = document.querySelectorAll(".day-name-container");
+
+		if (titles.length == 0) {
+			return 0;
+		}
+
+		let maxWidth = currentTitleWidth;
+
+		for (const title of titles) {
+			if (title === currentTitle) {
+				continue;
+			}
+
+			const titleElem = title as HTMLElement;
+			const width = titleElem.offsetWidth;
+			if (width > maxWidth) {
+				maxWidth = width;
+			}
+		}
+
+		setMarginRight(maxWidth - currentTitleWidth);
+	};
+
+	useEffect(() => {
+		calculMarginRight();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [i18n.language]);
 	return (
 		<>
 			{dayData ? (
-				<tr id={dayData.dayName} className={"day" + (selected ? "  selected" : "")}>
-					<td className="day-name-container">
-						<h3 className="day-name">{t("days." + dayData.dayName)}</h3>
-						<RemoteWork dayName={dayData.dayName} />
-					</td>
+				<div id={dayData.dayName} className={"day" + (selected ? "  selected" : "")}>
+					<div className="day-infos">
+						<div className="day-name-container" style={{ marginRight: marginRight }}>
+							<h3 className="day-name">{t("days." + dayData.dayName)}</h3>
+							<RemoteWork dayName={dayData.dayName} />
+						</div>
+						<div className="day-total-container">
+							<h3>{t("main.total")}</h3>
+							<p className="day-total">{getTotalTimeString()}</p>
+						</div>
+					</div>
 
-					<td className="day-total-container">
-						<h3>{t("main.total")}</h3>
-						<p className="day-total">{getTotalTimeString()}</p>
-					</td>
-
-					<td className={"day-input-container" + (dayData && dayData.isRemote ? " is-remote" : "")}>
+					<div className={"day-input-container" + (dayData && dayData.isRemote ? " is-remote" : "")}>
 						<DayInput section="start_AM" dayName={dayData.dayName} onChange={handleTimeChange} onInput={handleTimeInput} />
 						<span className="sound" onClick={() => play("coffee")} title={t("main.break.first")}>
 							☕
@@ -134,12 +171,12 @@ const Day: React.FC<DayProps> = ({ dayName, isFullDay }) => {
 								<DayInput section="end_PM" dayName={dayData.dayName} onChange={handleTimeChange} onInput={handleTimeInput} />
 							</>
 						)}
-					</td>
-				</tr>
+					</div>
+				</div>
 			) : (
-				<tr>
-					<td>{t("main.load")}</td>
-				</tr>
+				<div>
+					<p>{t("main.load")}</p>
+				</div>
 			)}
 		</>
 	);

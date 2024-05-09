@@ -2,6 +2,8 @@ header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+
+	padding: 1em 2em;
 }
 
 header h1 {
@@ -14,4 +16,11 @@ header #settings {
 	align-items: center;
 
 	gap: 1em;
+}
+
+@media screen and (max-width: 490px) {
+	header {
+		flex-direction: column-reverse;
+		gap: 1em;
+	}
 }

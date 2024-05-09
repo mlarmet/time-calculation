@@ -37,18 +37,18 @@ export default function Home() {
 		<div className="home">
 			{HeaderMemo()}
 			<main>
-				<div id="day-top">
-					<h2>{getTotalTimeString()}</h2>
-					<Actions />
+				<div id="day-top-container">
+					<div id="day-top">
+						<h2>{getTotalTimeString()}</h2>
+						<Actions />
+					</div>
 				</div>
 
-				<table id="day-container">
-					<tbody>
-						{daysOfWeek.map((day, index) => {
-							return <Day key={index} {...day} />;
-						})}
-					</tbody>
-				</table>
+				<div id="day-container">
+					{daysOfWeek.map((day, index) => {
+						return <Day key={index} {...day} />;
+					})}
+				</div>
 			</main>
 		</div>
 	);
