@@ -8,17 +8,13 @@
 .day .day-infos {
 	display: flex;
 	align-items: center;
+	gap: 2em;
 }
 
 .day {
 	flex-wrap: wrap;
 	width: 100%;
-	margin: 1em 0;
-}
-
-.day-infos {
-	margin-right: 2em;
-	gap: 2em;
+	padding-bottom: 3em;
 }
 
 .day h3,
@@ -38,7 +34,6 @@
 
 	gap: 2em;
 
-	margin: 1em 0 2em 0;
 	padding: 0.5em 1em 0.25em 1em;
 
 	border-radius: 10px;
@@ -124,7 +119,6 @@
 	.day {
 		flex-flow: row nowrap;
 		align-items: stretch;
-		margin: 1em 0 3em 0;
 	}
 
 	.day .day-infos {
@@ -132,8 +126,6 @@
 
 		flex-direction: column;
 		align-items: flex-start;
-
-		margin-right: 1em;
 	}
 
 	.day .day-input-container {
@@ -143,7 +135,6 @@
 		width: 100%;
 
 		padding: 1em;
-		margin: 0;
 	}
 }
 
@@ -172,9 +163,5 @@
 
 	.day .day-infos>div:last-child {
 		text-align: right;
-	}
-
-	.day .day-input-container {
-		margin: 1em 0;
 	}
 }

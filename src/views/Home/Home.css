@@ -63,6 +63,11 @@
 	max-width: 1000px;
 }
 
+
+.home #day-container {
+	margin: 2em 0 0 0;
+}
+
 .home .close-icon {
 	fill: var(--main-font-color) !important;
 }
