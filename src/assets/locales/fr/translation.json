@@ -46,6 +46,11 @@
 				"alert": {
 					"error": "Erreur lors du chargement des données"
 				}
+			},
+			"settings": {
+				"title": "Paramètres",
+				"theme": "Thème",
+				"lang": "Langue"
 			}
 		},
 		"total": "Total",

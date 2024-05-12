@@ -4,9 +4,23 @@ header {
 	align-items: center;
 
 	padding: 1em 2em;
+
+	background-color: #213547;
+	color: #f2f4f9;
 }
 
 header h1 {
+	margin: 0;
+}
+
+.option {
+	display: flex;
+	flex-direction: column;
+	width: fit-content;
+	margin: 0.5em 0 1em 0;
+}
+
+.option:last-child {
 	margin: 0;
 }
 
@@ -18,9 +32,6 @@ header #settings {
 	gap: 1em;
 }
 
-@media screen and (max-width: 490px) {
-	header {
-		flex-direction: column-reverse;
-		gap: 1em;
-	}
+header #settings svg {
+	fill: #f2f4f9 !important;
 }

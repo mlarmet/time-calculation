@@ -46,6 +46,11 @@
 				"alert": {
 					"error": "Fehler beim Laden der Daten"
 				}
+			},
+			"settings": {
+				"title": "Einstellungen",
+				"theme": "Thema",
+				"lang": "Sprache"
 			}
 		},
 		"total": "Gesamt",

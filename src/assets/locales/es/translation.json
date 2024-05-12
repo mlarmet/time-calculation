@@ -46,6 +46,11 @@
 				"alert": {
 					"error": "Error al cargar los datos"
 				}
+			},
+			"settings": {
+				"title": "Ajustes",
+				"theme": "Tema",
+				"lang": "Lengua"
 			}
 		},
 		"total": "Total",

@@ -46,6 +46,11 @@
 				"alert": {
 					"error": "Error loading data"
 				}
+			},
+			"settings": {
+				"title": "Settings",
+				"theme": "Theme",
+				"lang": "Language"
 			}
 		},
 		"total": "Total",
