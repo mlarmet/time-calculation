@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 
+import { Tooltip } from "@mui/joy";
+import { TooltipComponentsPropsOverrides } from "@mui/material";
+
 import DayInput from "components/DayInput/DayInput";
 import RemoteWork from "components/RemoteWork/RemoteWork";
 
@@ -16,6 +19,11 @@ const PATH = import.meta.env.BASE_URL;
 const Day: React.FC<DayProps> = ({ dayName, isFullDay }) => {
 	const [selected, setSelected] = useState<boolean>(false);
 	const [marginRight, setMarginRight] = useState<number>(-1);
+
+	const tooltipProps: TooltipComponentsPropsOverrides = {
+		arrow: true,
+		size: "sm",
+	};
 
 	const { t, i18n } = useTranslation();
 
@@ -149,25 +157,34 @@ const Day: React.FC<DayProps> = ({ dayName, isFullDay }) => {
 
 					<div className={"day-input-container" + (dayData && dayData.isRemote ? " is-remote" : "")}>
 						<DayInput section="start_AM" dayName={dayData.dayName} onChange={handleTimeChange} onInput={handleTimeInput} />
-						<span className="sound" onClick={() => play("coffee")} title={t("main.break.first")}>
-							☕
-						</span>
+						<Tooltip {...tooltipProps} title={t("main.break.first")}>
+							<span className="sound" onClick={() => play("coffee")} title={t("main.break.first")}>
+								☕
+							</span>
+						</Tooltip>
 						<DayInput section="end_AM" dayName={dayData.dayName} onChange={handleTimeChange} onInput={handleTimeInput} />
 
 						{!isFullDay && !dayData.isRemote ? (
-							<span className="sound" onClick={() => play("finish")} title={t("main.break.end")}>
-								🔚
-							</span>
+							<Tooltip {...tooltipProps} title={t("main.break.end")}>
+								<span className="sound" onClick={() => play("finish")} title={t("main.break.end")}>
+									🔚
+								</span>
+							</Tooltip>
 						) : (
 							<>
 								{/* Afternoon input  */}
-								<span className="sound" onClick={() => play("laugh")} title={t("main.break.middle")}>
-									🍽️
-								</span>
+								<Tooltip {...tooltipProps} title={t("main.break.middle")}>
+									<span className="sound" onClick={() => play("laugh")}>
+										🍽️
+									</span>
+								</Tooltip>
 								<DayInput section="start_PM" dayName={dayData.dayName} onChange={handleTimeChange} onInput={handleTimeInput} />
-								<span className="sound" onClick={() => play("belier")} title={t("main.break.last")}>
-									🐏
-								</span>
+
+								<Tooltip {...tooltipProps} title={t("main.break.last")}>
+									<span className="sound" onClick={() => play("belier")}>
+										🐏
+									</span>
+								</Tooltip>
 								<DayInput section="end_PM" dayName={dayData.dayName} onChange={handleTimeChange} onInput={handleTimeInput} />
 							</>
 						)}
