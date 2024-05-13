@@ -9,6 +9,18 @@ header {
 	color: #f2f4f9;
 }
 
+header #settings {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	gap: 1em;
+}
+
+header #settings svg {
+	fill: #f2f4f9 !important;
+}
+
 header h1 {
 	margin: 0;
 }
@@ -24,14 +36,6 @@ header h1 {
 	margin: 0;
 }
 
-header #settings {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-
-	gap: 1em;
-}
-
-header #settings svg {
-	fill: #f2f4f9 !important;
+.MuiDrawer-root .MuiDrawer-content {
+	width: 325px;
 }

@@ -1,13 +1,13 @@
-/* .theme-switch {
-	padding: 0.75em 0.5em 0 0;
-} */
-
 .theme-switch .MuiToggleButtonGroup-root .MuiButton-root {
-	padding-inline: 0.5rem;
-	--Button-paddingBlock: 0.25rem;
+	padding-inline: 0.75rem;
+	/*	--Button-paddingBlock: 0.25rem;*/
 	--Button-minHeight: 1rem;
 }
 
+.theme-switch .MuiToggleButtonGroup-root .MuiButton-root svg {
+	margin: 0.125em 0.5em 0 0;
+}
+
 /* .theme-switch .MuiToggleButtonGroup-root .MuiButton-root[aria-pressed="false"] {
-	background-color: #fff; 
+	background-color: #fff;
 } */

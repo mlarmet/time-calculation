@@ -6,6 +6,9 @@ import { useColorScheme as useJoyColorScheme } from "@mui/joy/styles";
 import { useColorScheme as useMaterialColorScheme } from "@mui/material/styles";
 import { Mode } from "@mui/system/cssVars/useCurrentColorScheme";
 
+import { GrSystem as SystemIcon } from "react-icons/gr";
+import { IoMdMoon as DarkIcon, IoMdSunny as LightIcon } from "react-icons/io";
+
 import "./ThemeSwitch.css";
 
 const ThemeSwitch = () => {
@@ -56,7 +59,6 @@ const ThemeSwitch = () => {
 	return (
 		<div className="theme-switch">
 			<ToggleButtonGroup
-				size="lg"
 				color="primary"
 				variant="outlined"
 				value={value}
@@ -67,13 +69,13 @@ const ThemeSwitch = () => {
 				}}
 			>
 				<Button value="light" title={t("theme.light")}>
-					🌞
+					<LightIcon /> {t("theme.light")}
 				</Button>
 				<Button value="dark" title={t("theme.dark")}>
-					🌒
+					<DarkIcon /> {t("theme.dark")}
 				</Button>
 				<Button value="system" title={t("theme.system")}>
-					⚙️
+					<SystemIcon /> {t("theme.system")}
 				</Button>
 			</ToggleButtonGroup>
 		</div>
