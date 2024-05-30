@@ -15,25 +15,19 @@ export const DayInputSlice = createSlice({
 
 	reducers: {
 		setDayInput: (state, action) => {
-			const items = state.items.map((item) => {
-				if (item.dayName === action.payload.dayName) {
-					return action.payload.dayData;
-				}
-				return item;
-			});
+			const index = state.items.findIndex((item) => item.dayName === action.payload.dayName);
 
-			state.items = items;
+			if (index !== -1) {
+				state.items[index] = action.payload.dayData;
+			}
 		},
 
 		setRemoteWork: (state, action) => {
-			const items = state.items.map((item) => {
-				if (item.dayName === action.payload.dayName) {
-					return { ...item, isRemote: action.payload.isRemote };
-				}
-				return item;
-			});
+			const index = state.items.findIndex((item) => item.dayName === action.payload.dayName);
 
-			state.items = items;
+			if (index !== -1) {
+				state.items[index].isRemote = action.payload.isRemote;
+			}
 		},
 	},
 });
