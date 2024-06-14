@@ -6,10 +6,10 @@ import LanguageSwitchtch from "components/LanguageSwitch/LanguageSwitch";
 import ThemeSwitch from "components/ThemeSwitch/ThemeSwitch";
 
 import { DialogTitle, Divider, Drawer, ModalClose, Typography } from "@mui/joy";
+import { Box } from "@mui/system";
 
 import { IoMdSettings as SettingsIcon } from "react-icons/io";
 
-import { Box } from "@mui/system";
 import "./Header.css";
 
 const Header = () => {

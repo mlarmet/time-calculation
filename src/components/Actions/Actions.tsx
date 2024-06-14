@@ -8,12 +8,12 @@ import { getAllDays } from "components/Day/Day.slice";
 
 import { Button, ColorPaletteProp, DialogActions, DialogContent, DialogTitle, Divider, Modal, ModalClose, ModalDialog, Snackbar } from "@mui/joy";
 
-import { IoMdClose as CloseIcon } from "react-icons/io";
+import { IoIosClose as CloseIcon } from "react-icons/io";
 import { IoAlertCircleOutline as ErrorIcon, IoCheckmarkCircleOutline as SuccessIcon } from "react-icons/io5";
 
 import "./Actions.css";
 
-import { DisplayAlert } from "./Action.type";
+import { DisplayAlert } from "./Actions.type";
 
 export default function Actions() {
 	const [displayAlert, setDisplayAlert] = useState<DisplayAlert>({ color: "neutral", content: "", open: false });
