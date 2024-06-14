@@ -29,10 +29,14 @@ export const DayInputSlice = createSlice({
 				state.items[index].isRemote = action.payload.isRemote;
 			}
 		},
+
+		setData: (state, action) => {
+			state.items = action.payload;
+		},
 	},
 });
 
-export const { setDayInput, setRemoteWork } = DayInputSlice.actions;
+export const { setDayInput, setRemoteWork, setData } = DayInputSlice.actions;
 
 export const getAllDays = (state: RootState) => state.day.items;
 

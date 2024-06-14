@@ -143,4 +143,4 @@ const getItems = (): DaySliceModel[] => {
 
 const initialItems = getItems();
 
-export { daysOfWeek, defaultTimeSettings, initialItems, remoteTime, remoteTimeSettings, validLocalStorage };
+export { daysOfWeek, defaultTimeSettings, initialItems, remoteTime, remoteTimeSettings, validLocalStorage, validateData };

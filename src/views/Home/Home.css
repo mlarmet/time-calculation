@@ -62,6 +62,21 @@
 	border-radius: 50px;
 }
 
+.home #day-top-left {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1em;
+}
+
+#share-content {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+
+	margin-top: 1em;
+}
+
 .home #day-container {
 	margin: 2em 0 0 0;
 	flex: 1;

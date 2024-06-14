@@ -43,7 +43,15 @@
 				}
 			},
 			"load": {
+				"btn-text": "Load",
+				"title": "Load data",
+				"text": "Loading method",
+				"methods": {
+					"clipboard": "Paste",
+					"file": "Import"
+				},
 				"alert": {
+					"success": "Data loaded successfully",
 					"error": "Error loading data"
 				}
 			},
@@ -51,6 +59,24 @@
 				"title": "Settings",
 				"theme": "Theme",
 				"lang": "Language"
+			},
+			"export": {
+				"btn-text": "Export",
+				"title": "Export data",
+				"text": "Export method",
+				"methods": {
+					"clipboard": "Copy",
+					"file": "Download",
+					"mail": {
+						"subject": "Exporting my WorkSync data",
+						"body": "Hello, %0D%0AHere is my WorkSync data:",
+						"text": "Email"
+					}
+				},
+				"alert": {
+					"success": "Data exported successfully",
+					"error": "Error exporting data"
+				}
 			}
 		},
 		"total": "Total",

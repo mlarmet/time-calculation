@@ -43,7 +43,15 @@
 				}
 			},
 			"load": {
+				"btn-text": "Charger",
+				"title": "Charger les données",
+				"text": "Méthode de chargement",
+				"methods": {
+					"clipboard": "Coller",
+					"file": "Importer"
+				},
 				"alert": {
+					"success": "Données chargées avec succès",
 					"error": "Erreur lors du chargement des données"
 				}
 			},
@@ -51,6 +59,24 @@
 				"title": "Paramètres",
 				"theme": "Thème",
 				"lang": "Langue"
+			},
+			"export": {
+				"btn-text": "Exporter",
+				"title": "Exporter les données",
+				"text": "Méthode d'export",
+				"methods": {
+					"clipboard": "Copier",
+					"file": "Télécharger",
+					"mail": {
+						"subject": "Export de mes données WorkSync",
+						"body": "Bonjour, %0D%0AVoici mes données WorkSync :",
+						"text": "Email"
+					}
+				},
+				"alert": {
+					"success": "Données exportées avec succès",
+					"error": "Erreur lors de l'export des données"
+				}
 			}
 		},
 		"total": "Total",

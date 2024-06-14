@@ -44,11 +44,7 @@ const Day: React.FC<DayProps> = ({ dayName, isFullDay }) => {
 		const startDateTime = parseTimeToData(startTime).getTime();
 		const endDateTime = parseTimeToData(endTime).getTime();
 
-		if (endDateTime < startDateTime) {
-			return 0;
-		}
-
-		return endDateTime - startDateTime;
+		return Math.max(0, endDateTime - startDateTime);
 	};
 
 	const getTotalTimeString = () => {
