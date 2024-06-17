@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { IconContext } from "react-icons";
 import { useSelector } from "react-redux";
 
-import { validLocalStorage } from "components/Day/Day.data";
+import { setValidLocalStorage, validLocalStorage } from "components/Day/Day.data";
 import { getAllDays } from "components/Day/Day.slice";
 
 import { Button, ColorPaletteProp, DialogActions, DialogContent, DialogTitle, Divider, Modal, ModalClose, ModalDialog, Snackbar } from "@mui/joy";
@@ -16,9 +16,10 @@ import "./Actions.css";
 import { DisplayAlert } from "./Actions.type";
 
 export default function Actions() {
-	const [displayAlert, setDisplayAlert] = useState<DisplayAlert>({ color: "neutral", content: "", open: false });
-
+	const [enableSave, setEnableSave] = useState<boolean>(false);
 	const [showConfirmDelete, setShowConfirmDelete] = useState<boolean>(false);
+
+	const [displayAlert, setDisplayAlert] = useState<DisplayAlert>({ color: "neutral", content: "", open: false });
 
 	const { t } = useTranslation();
 
@@ -28,10 +29,14 @@ export default function Actions() {
 		try {
 			localStorage.setItem("items", JSON.stringify(dayData));
 			showSuccessAlert(t("main.actions.save.alert.success"));
+
+			setValidLocalStorage(true);
 		} catch (error) {
 			console.error("Error while saving items to local storage", error);
 			showErrorAlert(t("main.actions.save.alert.error"));
 		}
+
+		checkEnableSave();
 	};
 
 	const handleClearAction = () => {
@@ -43,6 +48,8 @@ export default function Actions() {
 
 		setShowConfirmDelete(false);
 		showSuccessAlert(t("main.actions.clear.alert.success"));
+
+		checkEnableSave();
 	};
 
 	const showAlert = (color: ColorPaletteProp, content: string, startDecorator?: React.ReactNode) => {
@@ -61,6 +68,28 @@ export default function Actions() {
 		setDisplayAlert({ ...displayAlert, open: false });
 	};
 
+	const checkEnableSave = () => {
+		setEnableSave(!validLocalStorage || JSON.stringify(dayData) !== localStorage.getItem("items"));
+	};
+
+	const handleUnsavedEvent = (e: BeforeUnloadEvent) => {
+		if (enableSave) {
+			e.preventDefault();
+		}
+	};
+
+	useEffect(() => {
+		window.addEventListener("beforeunload", handleUnsavedEvent);
+		return () => window.removeEventListener("beforeunload", handleUnsavedEvent);
+
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [enableSave]);
+
+	useEffect(() => {
+		checkEnableSave();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [dayData]);
+
 	useEffect(() => {
 		if (!validLocalStorage) {
 			showErrorAlert(t("main.actions.load.alert.error"));
@@ -74,7 +103,9 @@ export default function Actions() {
 				<Button onClick={handleClearAction} variant="plain" color="danger">
 					{t("main.actions.clear.btn-text")}
 				</Button>
-				<Button onClick={handleSaveAction}>{t("main.actions.save.btn-text")}</Button>
+				<Button onClick={handleSaveAction} disabled={!enableSave}>
+					{t("main.actions.save.btn-text")}
+				</Button>
 			</div>
 
 			<Snackbar

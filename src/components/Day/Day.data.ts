@@ -121,6 +121,10 @@ const initializeDefaultItems = (timeSettings: Record<TimeSection, TimeSettings>)
 
 let validLocalStorage: boolean = true;
 
+const setValidLocalStorage = (value: boolean) => {
+	validLocalStorage = value;
+};
+
 const getItems = (): DaySliceModel[] => {
 	const items = localStorage.getItem("items");
 
@@ -143,4 +147,4 @@ const getItems = (): DaySliceModel[] => {
 
 const initialItems = getItems();
 
-export { daysOfWeek, defaultTimeSettings, initialItems, remoteTime, remoteTimeSettings, validLocalStorage, validateData };
+export { daysOfWeek, defaultTimeSettings, initialItems, remoteTime, remoteTimeSettings, setValidLocalStorage, validLocalStorage, validateData };

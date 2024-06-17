@@ -4,3 +4,8 @@
 	align-items: center;
 	gap: 1em;
 }
+
+#actions button:disabled {
+	pointer-events: unset;
+	cursor: not-allowed;
+}

@@ -65,7 +65,7 @@ const Day: React.FC<DayProps> = ({ dayName, isFullDay }) => {
 	};
 
 	const handleTimeChange = (section: TimeSection, time: string) => {
-		if (!dayData || dayData.isRemote) {
+		if (!dayData || dayData.isRemote || time === "Invalid date") {
 			return;
 		}
 
