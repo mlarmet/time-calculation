@@ -68,13 +68,8 @@ const DayInput: React.FC<DayInputProps> = ({ section, dayName, onChange, onInput
 						minutes: renderTimeViewClock,
 					}}
 					value={time !== "00:00" ? moment(time, "HH:mm") : null}
-					// onChange={handleChange}
+					onChange={handleChange}
 					onAccept={handleChange}
-					onError={(e) => {
-						console.log(e);
-
-						console.log("error");
-					}}
 					onOpen={() => onInput(true)}
 					onClose={() => onInput(false)}
 					minTime={moment(minTime, "HH:mm")}
