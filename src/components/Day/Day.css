@@ -26,6 +26,16 @@
 	margin-bottom: 0.25em;
 }
 
+.day .today {
+	color: var(--main-bg-color);
+	background-color: var(--main-font-color);
+
+	padding: 0.25em 0.5em;
+	margin-left: -0.5em !important;
+	
+	border-radius: 50px;
+}   
+
 .day .day-input-container {
 	display: grid;
 	grid-template-columns: 1fr var(--icon-width) 1fr var(--icon-width) 1fr var(--icon-width) 1fr;

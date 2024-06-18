@@ -146,7 +146,7 @@ const Day: React.FC<DayProps> = ({ dayName, isFullDay }) => {
 							<RemoteWork dayName={dayData.dayName} />
 						</div>
 						<div className="day-total-container">
-							<h3>{t("main.total")}</h3>
+							<h3 className={moment(mydate).format('dddd').toLowerCase() === dayData.dayName.toLowerCase() ? "today" : ""}>{t("main.total")}</h3>
 							<p className="day-total">{getTotalTimeString()}</p>
 						</div>
 					</div>
