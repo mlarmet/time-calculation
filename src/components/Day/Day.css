@@ -30,7 +30,7 @@
 	color: var(--main-bg-color);
 	background-color: var(--main-font-color);
 
-	padding: 0.25em 0.5em;
+	padding: 0.125em 0.5em;
 	margin-left: -0.5em !important;
 	
 	border-radius: 50px;
