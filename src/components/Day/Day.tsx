@@ -144,11 +144,11 @@ const Day: React.FC<DayProps> = ({ dayName, isFullDay }) => {
 				<div id={dayData.dayName} className={"day" + (selected ? "  selected" : "")}>
 					<div className="day-infos">
 						<div className="day-name-container" style={{ marginRight: marginRight }}>
-							<h3 className="day-name">{t("days." + dayData.dayName)}</h3>
+							<h3 className={"day-name" + moment().format('dddd').toLowerCase() === dayData.dayName.toLowerCase() ? " today" : ""}>{t("days." + dayData.dayName)}</h3>
 							<RemoteWork dayName={dayData.dayName} />
 						</div>
 						<div className="day-total-container">
-							<h3 className={moment().format('dddd').toLowerCase() === dayData.dayName.toLowerCase() ? "today" : ""}>{t("main.total")}</h3>
+							<h3>{t("main.total")}</h3>
 							<p className="day-total">{getTotalTimeString()}</p>
 						</div>
 					</div>
