@@ -144,7 +144,9 @@ const Day: React.FC<DayProps> = ({ dayName, isFullDay }) => {
 				<div id={dayData.dayName} className={"day" + (selected ? "  selected" : "")}>
 					<div className="day-infos">
 						<div className="day-name-container" style={{ marginRight: marginRight }}>
-							<h3 className={"day-name" + moment().format('dddd').toLowerCase() === dayData.dayName.toLowerCase() ? " today" : ""}>{t("days." + dayData.dayName)}</h3>
+							<h3 className={"day-name" + (moment().format('dddd').toLowerCase() === dayData.dayName.toLowerCase() ? " today" : "")}>
+								{t("days." + dayData.dayName)}
+							</h3>
 							<RemoteWork dayName={dayData.dayName} />
 						</div>
 						<div className="day-total-container">
@@ -153,7 +155,7 @@ const Day: React.FC<DayProps> = ({ dayName, isFullDay }) => {
 						</div>
 					</div>
 
-					<div className={"day-input-container" + (dayData && dayData.isRemote ? " is-remote" : "")}>
+					<div className={"day-input-container" + (dayData.isRemote ? " is-remote" : "")}>
 						<DayInput section="start_AM" dayName={dayData.dayName} onChange={handleTimeChange} onInput={handleTimeInput} />
 						<Tooltip {...tooltipProps} title={t("main.break.first")}>
 							<span className="sound" onClick={() => play("coffee")} title={t("main.break.first")}>
