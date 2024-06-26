@@ -126,20 +126,16 @@ const setValidLocalStorage = (value: boolean) => {
 };
 
 const getItems = (): DaySliceModel[] => {
-	const items = localStorage.getItem("items");
-
-	if (items) {
-		const parsedItems: DaySliceModel[] = JSON.parse(items);
-
-		if (parsedItems) {
-			try {
-				validateData(parsedItems);
-				return parsedItems;
-			} catch (e) {
-				console.error(e);
-				validLocalStorage = false;
-			}
+	try {
+		const items = localStorage.getItem("items");
+		if (items) {
+			const parsedItems: DaySliceModel[] = JSON.parse(items);
+			validateData(parsedItems);
+			return parsedItems;
 		}
+	} catch (e) {
+		console.error(e);
+		validLocalStorage = false;
 	}
 
 	return initializeDefaultItems(defaultTimeSettings);
