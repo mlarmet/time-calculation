@@ -12,7 +12,7 @@ import { IoMdSettings as SettingsIcon } from "react-icons/io";
 
 import "./Header.css";
 
-const Header = () => {
+export default function Header() {
 	const [showSettings, setShowSettings] = useState<boolean>(false);
 
 	const { t } = useTranslation();
@@ -24,7 +24,15 @@ const Header = () => {
 	return (
 		<>
 			<header>
-				<h1>{__APP_NAME__}</h1>
+				<div id="app-name">
+					<h1>{__APP_NAME__}</h1>
+					<p id="credit">
+						by&nbsp;
+						<a href="https://mlarmet.github.io" target="_blank" rel="noopener noreferrer">
+							Maxence LARMET
+						</a>
+					</p>
+				</div>
 
 				<div id="settings">
 					<IconContext.Provider
@@ -60,6 +68,4 @@ const Header = () => {
 			</Drawer>
 		</>
 	);
-};
-
-export default Header;
+}

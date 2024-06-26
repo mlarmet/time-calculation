@@ -3,9 +3,35 @@ header {
 	justify-content: space-between;
 	align-items: center;
 
-	padding: 1em 2em;
+	padding: 0.75em 2em;
 
 	background-color: #213547;
+	color: #f2f4f9;
+}
+
+header #app-name {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+}
+
+header #app-name h1 {
+	margin: 0;
+	/* Fix text not vertically align in box */
+	/* Counter negative margin with padding to avoid changing header height */
+	margin-top: -4px;
+	padding-bottom: 4px;
+
+	margin-right: 0.5em;
+}
+
+header #app-name #credit {
+	margin: 0;
+	font-style: italic;
+}
+
+header #app-name #credit,
+header #app-name #credit a {
 	color: #f2f4f9;
 }
 
@@ -19,10 +45,6 @@ header #settings {
 
 header #settings svg {
 	fill: #f2f4f9 !important;
-}
-
-header h1 {
-	margin: 0;
 }
 
 .option {
