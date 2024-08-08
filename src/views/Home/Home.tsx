@@ -160,7 +160,6 @@ export default function Home() {
 					} finally {
 						// clean up
 						input.remove();
-						console.log("clean up");
 					}
 				};
 
