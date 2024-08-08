@@ -114,7 +114,7 @@ const initializeDefaultItems = (timeSettings: Record<TimeSection, TimeSettings>)
 			start_PM: timeSettings.start_PM.defaultTime,
 			end_PM: timeSettings.end_PM.defaultTime,
 		},
-		total: 0,
+		total: 440,
 	}));
 	return defaultItems;
 };
@@ -143,4 +143,14 @@ const getItems = (): DaySliceModel[] => {
 
 const initialItems = getItems();
 
-export { daysOfWeek, defaultTimeSettings, initialItems, remoteTime, remoteTimeSettings, setValidLocalStorage, validLocalStorage, validateData };
+export {
+	daysOfWeek,
+	defaultTimeSettings,
+	initialItems,
+	initializeDefaultItems,
+	remoteTime,
+	remoteTimeSettings,
+	setValidLocalStorage,
+	validateData,
+	validLocalStorage,
+};

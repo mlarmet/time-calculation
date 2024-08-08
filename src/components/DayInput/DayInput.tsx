@@ -38,17 +38,15 @@ const DayInput: React.FC<DayInputProps> = ({ section, dayName, onChange, onInput
 		setMinTime(min);
 		setMaxTime(max);
 
-		if (!dayData || dayData.isRemote) {
-			setTime(remoteTimeSettings[section].defaultTime);
-		} else {
-			setTime(dayData.time[section]);
-		}
+		const time = dayData && !dayData.isRemote ? dayData.time[section] : remoteTimeSettings[section].defaultTime;
+
+		setTime(time);
 	};
 
 	useEffect(() => {
 		setMinMaxAndTime();
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [dayData?.isRemote]);
+	}, [dayData]);
 
 	useEffect(() => {
 		onChange(section, time);

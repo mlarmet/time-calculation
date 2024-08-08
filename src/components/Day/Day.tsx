@@ -67,7 +67,7 @@ const Day: React.FC<DayProps> = ({ dayName, isFullDay }) => {
 	};
 
 	const handleTimeChange = (section: TimeSection, time: string) => {
-		if (!dayData || dayData.isRemote || time === "Invalid date") {
+		if (!dayData || dayData.isRemote || time === "Invalid date" || time === "00:00") {
 			return;
 		}
 
@@ -145,7 +145,7 @@ const Day: React.FC<DayProps> = ({ dayName, isFullDay }) => {
 					<div className="day-infos">
 						<div className="day-name-container" style={{ marginRight: marginRight }}>
 							<h3 className="day-name">
-								<span className={moment().format('dddd').toLowerCase() === dayData.dayName.toLowerCase() ? "today" : ""}>
+								<span className={moment().format("dddd").toLowerCase() === dayData.dayName.toLowerCase() ? "today" : ""}>
 									{t("days." + dayData.dayName)}
 								</span>
 							</h3>
